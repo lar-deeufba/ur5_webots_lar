@@ -2,9 +2,9 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="ur5e" >
 
   <!-- ur5e -->
-  <xacro:include filename="$(find ur_ufba_webots)/urdf/ur5e.urdf.xacro" />
+  <xacro:include filename="$(find ur5_webots_lar)/urdf/ur5e.urdf.xacro" />
 
-  <xacro:include filename="$(find ur_ufba_webots)/urdf/_d435.urdf.xacro" />
+  <xacro:include filename="$(find ur5_webots_lar)/urdf/_d435.urdf.xacro" />
   
   <!-- arm -->
   <xacro:ur5e_robot prefix="" joint_limited="true"
@@ -67,7 +67,7 @@
       <!-- The cam is rotated 14 degrees (0.24rad) through the yaw axis -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ur_ufba_webots/protos/CAM_Support2.stl" scale="1 1 1"/>
+        <mesh filename="package://ur5_webots_lar/protos/CAM_Support2.stl" scale="1 1 1"/>
       </geometry>
       <material name="Cyan">
         <color rgba="0.91 0.91 0.88 1.0"/>

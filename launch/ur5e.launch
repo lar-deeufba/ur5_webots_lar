@@ -13,7 +13,7 @@
   ########################################
   # Load UR5 URDF
   ########################################
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur_ufba_webots)/urdf/ur5e_joint_limited_robot.urdf.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur5_webots_lar)/urdf/ur5e_joint_limited_robot.urdf.xacro'" />
 
   <!-- Robot state publisher -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
@@ -25,7 +25,7 @@
   <node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub /calibrated std_msgs/Bool true" />
 
   <!-- Webots controller -->
-  <include file="$(find ur_ufba_webots)/launch/ur_controller.launch">
+  <include file="$(find ur5_webots_lar)/launch/ur_controller.launch">
     <arg name="auto-close" value="$(arg auto-close)"/>
   </include>
 

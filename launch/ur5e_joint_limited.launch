@@ -1,0 +1,15 @@
+<?xml version="1.0.0"?>
+<launch>
+  <arg name="prefix" default="" doc="Prefix to robot's joints' and links' names" />
+
+  <rosparam file="$(find ur5_webots_lar)/config/joint_names.yaml" command="load" />
+  <rosparam file="$(find ur5_webots_lar)/config/depth_camera_info.yaml" command="load" />
+  <rosparam file="$(find ur5_webots_lar)/config/color_camera_info.yaml" command="load" />
+
+  <include file="$(find ur5_webots_lar)/launch/ur5e.launch">
+    <arg name="limited" value="true"/>
+    <arg name="prefix" value="$(arg prefix)"/>
+  </include>
+
+  <include file="$(find ur5_webots_lar)/launch/depth_to_pc.launch"></include>
+</launch>

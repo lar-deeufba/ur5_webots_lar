@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>ur_ufba_webots</name>
+  <name>ur5_webots_lar</name>
   <version>1.0.0</version>
   <description>
       Webots simulation for the UR5e arm.

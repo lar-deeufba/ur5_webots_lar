@@ -74,23 +74,23 @@ Depois de instalar o webot e o ROS para o seu sistema operacional, siga os passo
 
 - No software webots, abra o mundo presente na pasta 
 
-  `ur_ufba_webots/worlds/ur5_robotiq_gripper2f140.wbt`
+  `worlds/ur5_robotiq_gripper2f140.wbt`
 
 - Antes de iniciar a simulação no webots, verifique se todos os controladores estão no modo `<extern>`. Aperte o play na simulação e faça o launch do seguinte arquivo:
 
      ```
-     roslaunch ur_ufba_webots ur5e_joint_limited.launch
+     roslaunch ur5_webots_lar ur5e_joint_limited.launch
      ```
      Após realizar o launch do ur5e_joint_limited.launch, a simulação irá iniciar automaticamente (lembre de deixar o play pressionado). Sempre que finalizar esse launch, você deve reiniciar a simulação no webots.
 
 - Rodar a simulação no RVIZ pode ser vantajoso para visualizar a nuvem de pontos, eixos de coordenadas, etc. Para abrir o rviz, realize o launch do seguinte arquivo:
      ```
-     roslaunch ur_ufba_webots view_ur5e.launch
+     roslaunch ur5_webots_lar view_ur5e.launch
      ```
 
 - Para controlar o robô, rode o seguinte *node*:
      ```
-     rosrun ur_ufba_webots test_controller.py
+     rosrun ur5_webots_lar test_controller.py
      ```
   Este node utiliza um planejamento de trajetória conhecido como polinômios quínticos. Além disso, foi implementada a cinemática inversa utilizando o pacote [Trac IK](http://wiki.ros.org/trac_ik).
 
@@ -110,6 +110,6 @@ Estes controladores utilizam os ActionServers presentes nos arquivos seguintes p
 Para criar uma nuvem de pontos que possa ser visualizada no RVIZ, foi implementado o nodelet [depth_image_proc/point_cloud_xyz](depth_image_proc/point_cloud_xyz) que utiliza os parâmetros intrínsecos da câmera para gerar a nuvem de pontos. Este nodelet está implementado no launch seguinte:
 - depth_to_pc.launch (inicializado automaticamente com o ur5e_joint_limited.launch)
 
-Os parâmetros intrínsecos da câmera estão localizados na pasta `ur_ufba_webots/config`, nos arquivos:
+Os parâmetros intrínsecos da câmera estão localizados na pasta `config`, nos arquivos:
 - color_camera_info.yaml
 - depth_camera_info.yaml
