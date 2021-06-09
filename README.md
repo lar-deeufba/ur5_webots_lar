@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-Clique na imagem abaixo para assistir o vídeo da demonstração.
+Este repositório se trata do desenvolvimento de um ambiente de simulação do UR5 no software [Webots](https://cyberbotics.com/). Clique na imagem abaixo para assistir o vídeo da demonstração.
 
 <p align="center">
 <a href="https://www.youtube.com/watch?v=ojnHzJJMOF8" target="_blank">
@@ -15,7 +15,7 @@ Clique na imagem abaixo para assistir o vídeo da demonstração.
 2. [Compatibilidade](#2.0)
 3. [Instalação](#3.0)
 4. [Como usar o pacote](#4.0) 
-5. [Informações sobre pacote](#4.0) 
+5. [Informações sobre pacote](#5.0)
 
 
 ---
