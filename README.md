@@ -3,7 +3,7 @@
 Clique na imagem abaixo para assistir o vídeo da demonstração.
 
 <p align="center">
-<a href="https://youtu.be/aJ39MruDdLo" target="_blank">
+<a href="https://www.youtube.com/watch?v=ojnHzJJMOF8" target="_blank">
 <img src="https://user-images.githubusercontent.com/28100951/121440615-98a52280-c95e-11eb-9177-1bf9fa9ab69c.png" width="500">
 </p>
 </a>
