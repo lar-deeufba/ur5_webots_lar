@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="ur5e" >
+
+  <!-- ur5e -->
+  <xacro:include filename="$(find ur_ufba_webots)/urdf/ur5e.urdf.xacro" />
+
+  <xacro:include filename="$(find ur_ufba_webots)/urdf/_d435.urdf.xacro" />
+  
+  <!-- arm -->
+  <xacro:ur5e_robot prefix="" joint_limited="true"
+    shoulder_pan_lower_limit="${-pi}" shoulder_pan_upper_limit="${pi}"
+    shoulder_lift_lower_limit="${-pi}" shoulder_lift_upper_limit="${pi}"
+    elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}"
+    wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}"
+    wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${pi}"
+    wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
+  />
+
+  <link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+  <!-- Frame coincident with all-zeros TCP on UR controller -->
+  <xacro:property name="tool0_offset" value="0.15"/>
+
+  <link name="grasping_link"/>
+  <joint name="ur5_joint_grasping_frame" type="fixed">
+    <origin xyz="0 0 ${tool0_offset}" rpy="0 0 0"/>
+    <parent link="tool0"/>
+    <child link="grasping_link"/>
+  </joint>
+
+  <link name="pre_grasp_net"/>
+  <joint name="pre_grasping_frame" type="fixed">
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    <parent link="tool0"/>
+    <child link="pre_grasp_net"/>
+  </joint>
+
+  <link name="post_grasp_net"/>
+  <joint name="post_grasping_frame" type="fixed">
+    <origin xyz="0 0 0.06" rpy="0 0 0"/>
+    <parent link="tool0"/>
+    <child link="post_grasp_net"/>
+  </joint> 
+
+  ########################################
+  # CAN Support code
+  ########################################
+  <link name="webots_tool_link" />
+
+  <joint name="webots_tool_joint" type="fixed">
+    <origin rpy="1.57 0 0" xyz="0 0 0"/>
+    <parent link="tool0"/>
+    <child link="webots_tool_link"/> 
+  </joint>
+
+  <!-- o wrist 2 fica 0.09465 m abaixo de wrist 3 (-0.0445+0.09465)-->
+  <!-- Its position is relative to its own (Caution: treat as inverse direction)-->
+  <!-- Its orientation is relative to the previous frame -->
+  <link name="CAM_support_link">
+    <visual>
+      <!-- The cam is rotated 14 degrees (0.24rad) through the yaw axis -->
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://ur_ufba_webots/protos/CAM_Support2.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="Cyan">
+        <color rgba="0.91 0.91 0.88 1.0"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="CAM_support_joint" type="fixed">
+    <origin rpy="0 -1.5704511 1.5705682" xyz="0.0447 -0.126 -0.0035"/>
+    <parent link="webots_tool_link"/>
+    <child link="CAM_support_link"/> 
+  </joint>
+
+  <link name="camera_webots_link" />
+
+  <joint name="camera_webots_joint" type="fixed">
+    <origin rpy="0 1.5707963 -1.3090063" xyz="0.112 -0.093 0"/>
+    <parent link="webots_tool_link"/>
+    <child link="camera_webots_link"/> 
+  </joint>
+
+  <link name="camera_ros_link" />
+
+  <joint name="camera_ros_joint" type="fixed">
+    <origin rpy="0 3.14 3.14" xyz="0 0 0"/>
+    <parent link="camera_webots_link"/>
+    <child link="camera_ros_link"/> 
+  </joint>
+
+  
+
+</robot>

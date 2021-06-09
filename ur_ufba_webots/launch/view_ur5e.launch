@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  ########################################
+  # Load UR5 URDF
+  ########################################
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur_ufba_webots)/urdf/ur5e_joint_limited_robot.urdf.xacro'" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur_ufba_webots)/config/view_robot.rviz" required="true" />
+</launch>

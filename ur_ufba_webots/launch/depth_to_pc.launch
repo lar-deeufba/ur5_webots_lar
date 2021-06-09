@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="nodelet" type="nodelet" args="manager" name="standalone_nodelet" output="screen"/>
+
+  <!-- <node pkg="selective_grasping" type="crop_depth_image.py" name="crop_depth_image"/> -->
+
+  <node pkg="nodelet" type="nodelet" name="depth_image_proc" args="load depth_image_proc/point_cloud_xyzrgb standalone_nodelet" output="screen">
+    <remap from="/rgb/camera_info" to="/webots/ur5/color_camera_info"/>
+    <remap from="/rgb/image_rect_color" to="/webots/ur5/color_camera"/>
+    <remap from="/depth_registered/image_rect" to="/webots/ur5/depth_camera"/>
+    <remap from="points" to="/webots/ur5/point_cloud"/>
+  </node>
+
+</launch>

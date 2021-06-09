@@ -1,0 +1,19 @@
+color_camera_info:
+  frame_id: "camera_ros_link"
+  height: 480
+  width: 640
+  distortion_model: ''
+  D: []
+  K: [462.1379699707031, 0.0, 320.0, 0.0, 462.1379699707031, 240.0, 0.0, 0.0, 1.0]
+  R: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  P: [462.1379699707031, 0.0, 320.0, 0.0, 0.0, 462.1379699707031, 240.0, 0.0, 0.0, 0.0, 1.0, 0.0]
+  binning_x: 0
+  binning_y: 0
+  roi: 
+    x_offset: 0
+    y_offset: 0
+    height: 0
+    width: 0
+    do_rectify: False
+
+

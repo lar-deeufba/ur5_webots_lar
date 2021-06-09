@@ -1,0 +1,10 @@
+#VRML_OBJ R2021a utf8
+RangeFinder {
+  translation 0.112 -0.093 0
+  rotation 0.5198742056615036 0.6778359835355757 -0.5198742056615036 1.95
+  name "depth-sensor"
+  fieldOfView 1.48
+  width 640
+  height 480
+  maxRange 3.0
+}

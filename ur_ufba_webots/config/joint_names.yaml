@@ -1,0 +1,4 @@
+ur5_joint_names: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+robotiq_joint_name: [finger_joint_1, finger_joint_2, left_inner_finger_joint, 
+                     finger_joint_3, finger_joint_4, right_inner_finger_joint]
+webot_grasp_status: False

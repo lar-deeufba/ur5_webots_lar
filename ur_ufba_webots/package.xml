@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+  <name>ur_ufba_webots</name>
+  <version>1.0.0</version>
+  <description>
+      Webots simulation for the UR5e arm.
+  </description>
+
+  <author>Caio Viturino</author>
+  <maintainer email="engcaiobarros@gmail.com">Caio Viturino</maintainer>
+  
+  <author>Daniel Oliveira</author>
+  <maintainer email="dandmetal@gmail.com">Daniel Oliveira</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <test_depend>roslaunch</test_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>joint_trajectory_controller</run_depend>
+  <run_depend>effort_controllers</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rostopic</run_depend>
+  <run_depend>controller_manager</run_depend>
+
+</package>

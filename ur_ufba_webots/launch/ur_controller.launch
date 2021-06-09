@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="auto-close" default="true" doc="Startup mode"/>
+  <env name="LD_LIBRARY_PATH" value="$(env LD_LIBRARY_PATH):$(env WEBOTS_HOME)/lib/controller"/>
+  <env name="PYTHONPATH" value="$(env PYTHONPATH):$(env WEBOTS_HOME)/lib/controller/python27" unless="$(eval '1' if env('ROS_DISTRO') == 'noetic' else '0')"/>
+  <env name="PYTHONPATH" value="$(env PYTHONPATH):$(env WEBOTS_HOME)/lib/controller/python38" if="$(eval '1' if env('ROS_DISTRO') == 'noetic' else '0')"/>
+  <node name="webots_universal_robots" pkg="ur_ufba_webots" type="webots_ur5_controller.py" required="$(arg auto-close)"/>
+  <node name="webots_cameras" pkg="ur_ufba_webots" type="webots_camera_controller.py"/>
+</launch>
