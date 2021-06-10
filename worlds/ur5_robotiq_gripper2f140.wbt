@@ -10,16 +10,13 @@ WorldInfo {
       material2 "objects"
       bounce 0.1
       bounceVelocity 0.001
-      forceDependentSlip [
-        0.001
-      ]
     }
   ]
 }
 Viewpoint {
   fieldOfView 0.9
-  orientation 0.551968081533297 -0.8130198209949996 -0.18528358707049664 5.277462467156392
-  position 1.5506227535723656 1.806849414518327 1.3013018364057944
+  orientation 0.4201910621799594 -0.894054776297263 -0.1552595512170777 5.241660032227297
+  position 1.2530432251949148 1.5910757638425643 1.0132282600601976
   followType "None"
 }
 TexturedBackground {
@@ -132,7 +129,7 @@ Solid {
   }
 }
 Solid {
-  translation -0.116978 0.874099 -0.0948558
+  translation 0.0283487 0.867557 -0.0666622
   rotation 0.9770827638055956 0.19849568264705786 -0.07686830715254152 1.441021
   children [
     DEF bar_clamp Shape {
@@ -172,20 +169,7 @@ Solid {
       0.0003961347544295828 0.0003152815674662769 0.00020273474847219981
       7.944126425659615e-06 4.365998315438843e-05 2.4571845944441926e-05
     ]
-    damping Damping {
-    }
   }
 }
 Table {
-}
-Solid {
-  translation 0 0.74 0
-  name "plane"
-  boundingObject ElevationGrid {
-    height [
-      0
-    ]
-    xDimension 2
-    zDimension 2
-  }
 }

@@ -166,15 +166,11 @@ class TrajectoryFollowerGripper(object):
 
 	def update_gripper(self):
 		webot_grasp_status = rospy.get_param('/webot_grasp_status')
-		# rospy.loginfo("touch_sensor 1" + str(self.TouchSensors[0].getValues()[-1]))
-		# rospy.loginfo("touch_sensor 2" + str(self.TouchSensors[1].getValues()[-1]))
-		
 		if self.received_goal_handle is not None:
 			if (self.TouchSensors[0].getValues()[-1] > self.force_threshold or self.TouchSensors[1].getValues()[-1] > self.force_threshold) and webot_grasp_status:
 				rospy.loginfo(self.received_goal_handle)
 				for i in range(len(TrajectoryFollowerGripper.gripperjointNames)):
 					self.grippermotors[i].setPosition(self.grippersensors[i].getValue())
-				# self.received_goal_handle.set_canceled() # nao pode estar em status 2
 				self.received_goal_handle.set_succeeded()
 				self.received_goal_handle = None
 				rospy.loginfo("Succeeded")

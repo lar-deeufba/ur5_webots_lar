@@ -150,7 +150,7 @@ class ur5_test_controller(object):
 			position = 0.1
 			grasp_status = False
 		elif action == 'close':
-			position = 0.5
+			position = 0.7
 			grasp_status = True
 
 		goal = FollowJointTrajectoryGoal()

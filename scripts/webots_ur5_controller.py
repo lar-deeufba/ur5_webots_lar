@@ -5,7 +5,7 @@ import argparse
 import rospy
 import time as timee
 
-from controller import Robot, TouchSensor, Camera, RangeFinder
+from controller import Robot, TouchSensor
 from joint_state_publisher import JointStatePublisher
 from trajectory_follower import TrajectoryFollower
 from trajectory_follower_gripper import TrajectoryFollowerGripper
