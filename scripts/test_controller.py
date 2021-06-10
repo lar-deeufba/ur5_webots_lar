@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import actionlib
 import numpy as np
-from copy import deepcopy
 
 # ROS Msgs
 from control_msgs.msg import FollowJointTrajectoryAction, FollowJointTrajectoryGoal, JointTolerance
@@ -157,7 +156,6 @@ class ur5_test_controller(object):
 		goal = FollowJointTrajectoryGoal()
 		goal.trajectory = JointTrajectory()
 		goal.trajectory.joint_names = self.robotiq_joint_name
-
 		
 		goal.trajectory.points.append(JointTrajectoryPoint(positions=[position]*6,
 														   velocities=[velocity]*6,
@@ -167,11 +165,7 @@ class ur5_test_controller(object):
 		self.client_gripper.send_goal(goal)
 		self.client_gripper.wait_for_result()
 		
-	def move_on_shutdown(self):
-		self.client.cancel_goal()
-		self.client_gripper.cancel_goal()
-		print("Shutting down node...")
-	
+
 def main():
 	ur5_controller = ur5_test_controller()
 	
@@ -179,7 +173,6 @@ def main():
 	joint_values_home = ur5_controller.get_ik(point_init_home)
 
 	ur5_controller.joint_values_home = joint_values_home
-	rospy.on_shutdown(ur5_controller.move_on_shutdown)
 	depth_shot_point = [0.5, 0.1, 0.35]
 
 	i = 0

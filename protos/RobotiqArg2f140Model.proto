@@ -177,7 +177,7 @@ PROTO RobotiqArg2f140Model [
                                   translation 0 0 -0.004
                                   children [
                                     Box {
-                                      size 0.020000 0.060000 0.000500 # profundidade x largura x altura
+                                      size 0.020000 0.060000 0.001000 # profundidade x largura x altura
                                     }
                                   ]
                                 }
@@ -413,7 +413,7 @@ PROTO RobotiqArg2f140Model [
                                   translation 0 0 -0.004
                                   children [
                                     Box {
-                                      size 0.020000 0.060000 0.000500 # profundidade x largura x altura
+                                      size 0.020000 0.060000 0.001000 # profundidade x largura x altura
                                     }
                                   ]
                                 }

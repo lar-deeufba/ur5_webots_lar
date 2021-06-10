@@ -83,6 +83,7 @@ def main():
 
 
 if __name__ == "__main__":
-	rospy.init_node(arguments.nodeName, log_level=rospy.FATAL, disable_signals=True)
+	# log_level=rospy.FATAL, 
+	rospy.init_node(arguments.nodeName, log_level=rospy.INFO, disable_signals=True)
 	main()
 	
