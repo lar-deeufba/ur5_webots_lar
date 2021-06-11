@@ -3,8 +3,8 @@
 Este repositório se trata do desenvolvimento de um ambiente de simulação do UR5 no software [Webots](https://cyberbotics.com/). Clique na imagem abaixo para assistir o vídeo da demonstração.
 
 <p align="center">
-<a href="https://www.youtube.com/watch?v=ojnHzJJMOF8" target="_blank">
-<img src="https://user-images.githubusercontent.com/28100951/121440615-98a52280-c95e-11eb-9177-1bf9fa9ab69c.png" width="500">
+<a href="https://www.youtube.com/watch?v=SvJ_B82_Ofc" target="_blank">
+<img src="https://user-images.githubusercontent.com/28100951/121699952-ccd72b00-caa5-11eb-86de-7cf41659294d.png" width="500">
 </p>
 </a>
 
