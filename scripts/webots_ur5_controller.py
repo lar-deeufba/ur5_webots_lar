@@ -10,10 +10,6 @@ from joint_state_publisher import JointStatePublisher
 from trajectory_follower import TrajectoryFollower
 from trajectory_follower_gripper import TrajectoryFollowerGripper
 from rosgraph_msgs.msg import Clock
-import cv2
-from cv_bridge import CvBridge
-from sensor_msgs.msg import Image, CameraInfo
-import numpy as np
 
 import os
 os.environ["WEBOTS_ROBOT_NAME"] = "UR5e"
@@ -83,7 +79,6 @@ def main():
 
 
 if __name__ == "__main__":
-	# log_level=rospy.FATAL, 
-	rospy.init_node(arguments.nodeName, log_level=rospy.INFO, disable_signals=True)
+	rospy.init_node(arguments.nodeName, log_level=rospy.FATAL, disable_signals=True)
 	main()
 	

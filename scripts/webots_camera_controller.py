@@ -139,6 +139,5 @@ def main():
 		depth_pub.publish(depth_cropped_imgmsg)
 
 if __name__ == "__main__":
-	rospy.init_node(arguments.nodeName, log_level=rospy.FATAL, disable_signals=True)
-	
+	rospy.init_node(arguments.nodeName, log_level=rospy.FATAL, disable_signals=True)	
 	main()
