@@ -97,7 +97,7 @@ class TrajectoryFollowerGripper(object):
 		self.gripperserver = actionlib.ActionServer("gripper_controller/follow_joint_trajectory",
 											 FollowJointTrajectoryAction,
 											 self.on_goal_gripper, self.on_cancel_gripper, auto_start=False)
-		self.force_threshold = 30										  
+		self.force_threshold = 300						  
 
 	def start(self):
 		"""Initialize and start the action server."""
@@ -167,7 +167,7 @@ class TrajectoryFollowerGripper(object):
 	def update_gripper(self):
 		webot_grasp_status = rospy.get_param('/webot_grasp_status')
 		if self.received_goal_handle is not None:
-			if (self.TouchSensors[0].getValues()[-1] > self.force_threshold or self.TouchSensors[1].getValues()[-1] > self.force_threshold) and webot_grasp_status:
+			if (self.TouchSensors[0].getValues()[-1] > self.force_threshold and self.TouchSensors[1].getValues()[-1] > self.force_threshold) and webot_grasp_status:
 				rospy.loginfo(self.received_goal_handle)
 				for i in range(len(TrajectoryFollowerGripper.gripperjointNames)):
 					self.grippermotors[i].setPosition(self.grippersensors[i].getValue())
